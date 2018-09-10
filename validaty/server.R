@@ -48,7 +48,10 @@ shinyServer(function(input, output) {
   
   ## Confrontation ----
   ResultSet <- reactive({
-    confront(DataSet(), RuleSet(),lin.eq.eps=input$lin.eq.eps)
+    confront(DataSet()
+       , RuleSet()
+       , key=input$key
+       , lin.eq.eps=input$lin.eq.eps)
   })
   
   output$resultset <- renderDataTable(summary(ResultSet()))
