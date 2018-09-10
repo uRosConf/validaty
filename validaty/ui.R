@@ -21,7 +21,7 @@ shinyUI(
                sidebarPanel(
                  shiny::fileInput("datafile","CSV file"),
                  shiny::selectInput("key", "Select key variable",
-                                    c("a","b","c"))),
+                                    c(""))),
                mainPanel(
                  dataTableOutput("datatable"))
     )),
