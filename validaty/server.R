@@ -10,7 +10,7 @@
 library(shiny)
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   
   ## reading data file ----
   DataFile <- reactive({
@@ -27,6 +27,18 @@ shinyServer(function(input, output) {
   output$datatable <- renderDataTable({
     DataSet()
   })
+  
+  observe({
+    data <- DataSet()
+    updateSelectInput(session, inputId = "key", choices = names(DataSet()))
+  })
+  # observeEvent(data_loaded , {
+  #   updateSelectInput(inputId = "key",
+  #                     choices = names(DataSet()))
+  # })
+  
+  
+  
   
   ## Reading rule file ----
   
