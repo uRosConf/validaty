@@ -12,11 +12,14 @@ library(shiny)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
    
-  datafile <- callModule(csvFile, "datafile",
-                         stringsAsFactors = FALSE)
-  
+  dataset <- callModule(csvFile, "datafile")
+ 
   output$table <- renderDataTable({
-    datafile()
+    dataset()
   })
-  
+
+  ruleset <- callModule(ruleFile, "rulefile") 
+  output$rules <- renderDataTable({
+     as.data.frame(ruleset())[c("name","label","rule")]
+  })
 })

@@ -23,16 +23,16 @@ shinyUI(
                mainPanel(
                  dataTableOutput("table")))
     ),
-    # tabPanel("Rule Input",
-    #          sidebarLayout(
-    #            sidebarPanel(
-    #              ruleFileInput("datafile", "User data (.csv format)")),
-    #            mainPanel(
-    #              dataTableOutput("table")))),
+    tabPanel("Rule Input",
+             sidebarLayout(
+               sidebarPanel(
+                 ruleFileInput("rulefile", "Free text or YAML format")),
+               mainPanel(
+                 shiny::dataTableOutput("rules")))),
     tabPanel("Rule Investigation",
              "some rule investigation"),
     tabPanel("Aggregate Results",
-             "some quicl overview"),
+             "some quick overview"),
     tabPanel("Detailed Results",
              "an in-depth result view")
     
