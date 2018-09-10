@@ -19,16 +19,28 @@ shinyUI(
     tabPanel("Data Input",
              sidebarLayout(
                sidebarPanel(
-                 csvFileInput("datafile", "User data (.csv format)")),
+                 shiny::fileInput("datafile","CSV file"),
+                 shiny::selectInput("key", "Select key variable",
+                                    c("a","b","c"))),
                mainPanel(
-                 dataTableOutput("table")))
-    ),
+                 dataTableOutput("datatable"))
+    )),
     tabPanel("Rule Input",
              sidebarLayout(
                sidebarPanel(
-                 ruleFileInput("rulefile", "Free text or YAML format")),
+                 fileInput("rulefile","Free text/YAML")),
                mainPanel(
                  shiny::dataTableOutput("rules")))),
+    tabPanel("Confrontation output",
+             sidebarLayout(
+               sidebarPanel(
+                 confrontDataOutput("confrontation")
+               ),
+               mainPanel(
+                 shiny::dataTableOutput("resultset")
+                 , shiny::plotOutput("confrontationplot")
+               )
+             )),
     tabPanel("Rule Investigation",
              "some rule investigation"),
     tabPanel("Aggregate Results",
