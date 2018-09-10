@@ -41,13 +41,14 @@ shinyServer(function(input, output) {
     validate::validator(.file=RuleFile()$datapath)
   })
   
+  output$RuleSet <- RuleSet
   output$rules <- renderDataTable({
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
   ## Confrontation ----
   ResultSet <- reactive({
-    confront(DataSet(), RuleSet())
+    confront(DataSet(), RuleSet(),lin.eq.eps=input$lin.eq.eps)
   })
   
   output$resultset <- renderDataTable(summary(ResultSet()))

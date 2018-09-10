@@ -16,7 +16,7 @@ shinyUI(
   navbarPage(
     title = "Validaty",
     
-    tabPanel("Data Input",
+    tabPanel("Data Inpuet",
              sidebarLayout(
                sidebarPanel(
                  shiny::fileInput("datafile","CSV file"),
@@ -34,6 +34,8 @@ shinyUI(
     tabPanel("Confrontation",
              sidebarLayout(
                sidebarPanel(
+                 shiny::numericInput("lin.eq.eps",label="Tolerance for equality"
+                                     ,1e-8),
                  submitButton("Go!")
                ),
                mainPanel(
