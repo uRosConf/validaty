@@ -12,18 +12,28 @@ library(data.table)
 
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
-  
-  # Application title
-  titlePanel("Validaty"),
-  
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      csvFileInput("datafile", "User data (.csv format)")
+shinyUI(
+  navbarPage(
+    title = "Validaty",
+    
+    tabPanel("Data Input",
+             sidebarLayout(
+               sidebarPanel(
+                 csvFileInput("datafile", "User data (.csv format)")),
+               mainPanel(
+                 dataTableOutput("table")))
     ),
-    mainPanel(
-      dataTableOutput("table")
-    )
-  )
-))
+    # tabPanel("Rule Input",
+    #          sidebarLayout(
+    #            sidebarPanel(
+    #              ruleFileInput("datafile", "User data (.csv format)")),
+    #            mainPanel(
+    #              dataTableOutput("table")))),
+    tabPanel("Rule Investigation",
+             "some rule investigation"),
+    tabPanel("Aggregate Results",
+             "some quicl overview"),
+    tabPanel("Detailed Results",
+             "an in-depth result view")
+    
+  ))
