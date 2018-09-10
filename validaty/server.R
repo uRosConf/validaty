@@ -45,10 +45,11 @@ shinyServer(function(input, output) {
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
-  resultset <- callModule(confrontData,"confrontation",data=dataset,rules=ruleset)
-  
-  output$resultset <- renderDataTable(summary(resultset()))
-  output$confrontationplot <- renderPlot({
-    callModule(plotConfrontation, "confrontation", confrontationobject=resultset )
+  ## Confrontation ----
+  ResultSet <- reactive({
+    confront(DataSet(), RuleSet())
   })
+  
+  output$resultset <- renderDataTable(summary(ResultSet()))
+  output$confrontationplot <- renderPlot(plot(ResultSet()))
 })

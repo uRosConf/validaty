@@ -31,14 +31,16 @@ shinyUI(
                  fileInput("rulefile","Free text/YAML")),
                mainPanel(
                  shiny::dataTableOutput("rules")))),
-    tabPanel("Confrontation output",
+    tabPanel("Confrontation",
              sidebarLayout(
                sidebarPanel(
-                 confrontDataOutput("confrontation")
+                 submitButton("Go!")
                ),
                mainPanel(
-                 shiny::dataTableOutput("resultset")
-                 , shiny::plotOutput("confrontationplot")
+                 tabsetPanel(
+                   tabPanel("summary",shiny::dataTableOutput("resultset"))
+                   , tabPanel("plot",shiny::plotOutput("confrontationplot"))
+                 )
                )
              )),
     tabPanel("Rule Investigation",
