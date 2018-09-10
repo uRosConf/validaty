@@ -36,7 +36,7 @@ shinyUI(
                sidebarPanel(
                  shiny::numericInput("lin.eq.eps"
                           , label="Tolerance for equality"
-                          , 1e-8, min=0,max=Inf),
+                          , 10, min=0,max=Inf),
                  submitButton("Go!")
                ),
                mainPanel(

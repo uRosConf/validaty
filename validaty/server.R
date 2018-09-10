@@ -32,11 +32,6 @@ shinyServer(function(input, output, session) {
     data <- DataSet()
     updateSelectInput(session, inputId = "key", choices = names(DataSet()))
   })
-  # observeEvent(data_loaded , {
-  #   updateSelectInput(inputId = "key",
-  #                     choices = names(DataSet()))
-  # })
-  
   
   
   
@@ -59,10 +54,17 @@ shinyServer(function(input, output, session) {
   })
   
   ## Confrontation ----
+  observe({
+    ruleset <- RuleSet()
+    updateNumericInput(session
+            , inputId = "lin.eq.eps"
+            , value = voptions(ruleset, "lin.eq.eps"))
+  })
+  
   ResultSet <- reactive({
     confront(DataSet()
        , RuleSet()
-       , key=input$key
+       , key = if (input$key == "no key") NA_character else input$key
        , lin.eq.eps=input$lin.eq.eps)
   })
   
