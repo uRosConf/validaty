@@ -8,7 +8,7 @@
 #
 
 library(shiny)
-
+library(data.table)
 
 
 # Define UI for application that draws a histogram
