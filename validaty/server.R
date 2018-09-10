@@ -30,12 +30,10 @@ shinyServer(function(input, output, session) {
   
   observe({
     data <- DataSet()
-    updateSelectInput(session, inputId = "key", choices = names(DataSet()))
+    updateSelectInput(session, inputId = "key", choices = c("no key", names(DataSet())))
   })
-  # observeEvent(data_loaded , {
-  #   updateSelectInput(inputId = "key",
-  #                     choices = names(DataSet()))
-  # })
+
+  
   
   
   

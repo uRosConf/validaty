@@ -16,7 +16,7 @@ shinyUI(
   navbarPage(
     title = "Validaty",
     
-    tabPanel("Data Inpuet",
+    tabPanel("Data Input",
              sidebarLayout(
                sidebarPanel(
                  shiny::fileInput("datafile","CSV file"),
