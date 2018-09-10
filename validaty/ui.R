@@ -25,12 +25,18 @@ shinyUI(
                mainPanel(
                  dataTableOutput("datatable"))
     )),
-    tabPanel("Rule Input",
+    tabPanel("Rule Management",
              sidebarLayout(
                sidebarPanel(
                  fileInput("rulefile","Free text/YAML")),
                mainPanel(
-                 shiny::dataTableOutput("rules")))),
+                 tabsetPanel(
+                   tabPanel("View Rules",
+                            shiny::dataTableOutput("rules")),
+                   tabPanel("View Coverage",
+                            "plot to be added"))))
+                 )
+                 ,
     tabPanel("Confrontation",
              sidebarLayout(
                sidebarPanel(
@@ -46,11 +52,6 @@ shinyUI(
                  )
                )
              )),
-    tabPanel("Rule Investigation",
-             "some rule investigation"),
-    tabPanel("Aggregate Results",
-             "some quick overview"),
-    tabPanel("Detailed Results",
-             "an in-depth result view")
-    
+    tabPanel("Error localization",
+             "Input needed here")
   ))
