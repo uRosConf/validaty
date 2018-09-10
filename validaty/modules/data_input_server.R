@@ -12,8 +12,7 @@ csvFile <- function(input, output, session, stringsAsFactors) {
     #          header = input$heading,
     #          quote = input$quote,
     #          stringsAsFactors = stringsAsFactors)
-    fread(userFile()$datapath,
-          skip)
+    fread(input=userFile()$datapath)
   })
   
   # We can run observers in here if we want to

@@ -11,15 +11,44 @@ library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-   
-  dataset <- callModule(csvFile, "datafile")
- 
-  output$table <- renderDataTable({
-    dataset()
+  
+  ## reading data file ----
+  DataFile <- reactive({
+    # If no file is selected, don't do anything
+    validate(need(input$datafile, message = FALSE))
+    input$datafile
   })
-
-  ruleset <- callModule(ruleFile, "rulefile") 
+  
+  # The user's data, parsed into a data frame
+  DataSet <- reactive({
+    fread(input=DataFile()$datapath)
+  })
+  
+  output$datatable <- renderDataTable({
+    DataSet()
+  })
+  
+  ## Reading rule file ----
+  
+  RuleFile <- reactive({
+    # If no file is selected, don't do anything
+    validate(need(input$rulefile, message = FALSE))
+    input$rulefile
+  })
+  
+  # The user's data, parsed into a data frame
+  RuleSet <- reactive({
+    validate::validator(.file=RuleFile()$datapath)
+  })
+  
   output$rules <- renderDataTable({
-     as.data.frame(ruleset())[c("name","label","rule")]
+     as.data.frame(RuleSet())[c("name","label","rule")]
+  })
+  
+  resultset <- callModule(confrontData,"confrontation",data=dataset,rules=ruleset)
+  
+  output$resultset <- renderDataTable(summary(resultset()))
+  output$confrontationplot <- renderPlot({
+    callModule(plotConfrontation, "confrontation", confrontationobject=resultset )
   })
 })

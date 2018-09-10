@@ -1,7 +1,8 @@
 
 ruleFile <- function(input, output, session) {
   # The selected file, if any
-  userFile <- reactive({
+  userFile <- 
+    reactive({
     # If no file is selected, don't do anything
     validate(need(input$file, message = FALSE))
     input$file
