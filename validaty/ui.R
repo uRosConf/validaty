@@ -9,19 +9,19 @@
 
 library(shiny)
 library(data.table)
-
+library(validate)
 
 # Define UI for application that draws a histogram
 shinyUI(
   navbarPage(
     title = "Validaty",
     
-    tabPanel("Data Inpuet",
+    tabPanel("Data Input",
              sidebarLayout(
                sidebarPanel(
                  shiny::fileInput("datafile","CSV file"),
                  shiny::selectInput("key", "Select key variable",
-                                    c(""))),
+                                    "no key")),
                mainPanel(
                  dataTableOutput("datatable"))
     )),
@@ -36,7 +36,7 @@ shinyUI(
                sidebarPanel(
                  shiny::numericInput("lin.eq.eps"
                           , label="Tolerance for equality"
-                          , 10, min=0,max=Inf),
+                          , value = 0, min=0, max=Inf),
                  submitButton("Go!")
                ),
                mainPanel(
