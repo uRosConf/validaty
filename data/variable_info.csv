@@ -1,0 +1,431 @@
+﻿V_ID,Item,Level,Item_No,Variable,Code,Contents
+1,3 major metroplotan areas,1,1,3City,"0, 1",
+3,Persons per household,1,2,T_SeJinin,"2, 3",2 people
+5,Number of workers,1,3,T_SyuJinin,"1, 2",one  or less
+7,Type of tenure of dwelling,1,4,T_JuSyoyu,"1, 2",Owned houses
+9,Employment or not,1,5,T_Syuhi,"1, 2",Employment / Unemployment
+11,Age group of workers' household head,1,6,T_Age_5s,"1-9, 0",
+21,Age group of non-employment,1,7,T_Age_65,"1, 2",<= 65 / >65
+23,Weight,1,8,Weight,>0,Weight
+24,Yearly income (thousand yen),1,9,Y_Income,>0,Unit:thousand yen
+25,Living expenditure,1,10,L_Expenditure,>0,Unit:yen
+26,Food,1,11,Food,>0,Unit:yen
+27,Housing,1,12,Housing,>0,Unit:yen
+28,"Fuel, light and water charges     ",1,13,LFW,>0,Unit:yen
+29,Furniture and household utensils      ,1,14,Furniture,>0,Unit:yen
+30,Clothes and footwear,1,15,Clothes,>0,Unit:yen
+31,Medical care        ,1,16,Health,>0,Unit:yen
+32,Transportation and communication       ,1,17,Transport,>0,Unit:yen
+33,Education         ,1,18,Education,>0,Unit:yen
+34,Reading and recreation       ,1,19,Recreation,>0,Unit:yen
+35,Other living expenditure,1,20,OL_Expenditure,>0,Unit:yen
+37,Food,2,21,E001,>0,Unit:yen
+38,Cereals,3,22,E002,>0,Unit:yen
+39,Rice,4,23,E003,>0,Unit:yen
+40,Bread,4,24,E004,>0,Unit:yen
+41,Noodles,4,25,E005,>0,Unit:yen
+42,Other cereals,4,26,E006,>0,Unit:yen
+43,Fish and shellfish,3,27,E007,>0,Unit:yen
+44,Fresh fish and shellfish,4,28,E008,>0,Unit:yen
+45,Salted and dried fish,4,29,E009,>0,Unit:yen
+46,Fishpaste products,4,30,E010,>0,Unit:yen
+47,Other processed fish,4,31,E011,>0,Unit:yen
+48,Meat,3,32,E012,>0,Unit:yen
+49,Fresh meat,4,33,E013,>0,Unit:yen
+50,Beef,5,34,E014,>0,Unit:yen
+51,Pork,5,35,E015,>0,Unit:yen
+52,Chicken,5,36,E016,>0,Unit:yen
+53,Mixed ground meat       ,5,37,E017,>0,Unit:yen
+54,Other fresh meat       ,5,38,E018,>0,Unit:yen
+55,Meat products        ,4,39,E019,>0,Unit:yen
+56,Ham and sausages       ,5,40,E020,>0,Unit:yen
+57,Other meat products       ,5,41,E021,>0,Unit:yen
+58,Dairy products and eggs      ,3,42,E022,>0,Unit:yen
+59,Fresh milk        ,4,43,E023,>0,Unit:yen
+60,Dairy products        ,4,44,E024,>0,Unit:yen
+61,Powdered milk        ,5,45,E025,>0,Unit:yen
+62,Yogurt         ,5,46,E026,>0,Unit:yen
+63,Butter and cheese       ,5,47,E027,>0,Unit:yen
+64,Other dairy products       ,5,48,E028,>0,Unit:yen
+65,Eggs         ,4,49,E029,>0,Unit:yen
+66,Vegetables and seaweeds       ,3,50,E030,>0,Unit:yen
+67,Fresh vegetables        ,4,51,E031,>0,Unit:yen
+68,Dried vegetables and seaweeds      ,4,52,E032,>0,Unit:yen
+69,Beans         ,5,53,E033,>0,Unit:yen
+70,Dried laver        ,5,54,E034,>0,Unit:yen
+71,“Wakame”，seaweed and dried tangle      ,5,55,E035,>0,Unit:yen
+72,Other dried vegetables and seaweeds     ,5,56,E036,>0,Unit:yen
+73,Soybean products        ,4,57,E037,>0,Unit:yen
+74,Bean curd        ,5,58,E038,>0,Unit:yen
+75,Fried bean curd       ,5,59,E039,>0,Unit:yen
+76,“Natto”， fermented soybeans       ,5,60,E040,>0,Unit:yen
+77,Other soybean products       ,5,61,E041,>0,Unit:yen
+78,Other processed vegetables and seaweeds,4,62,E042,>0,Unit:yen
+79,“Konnyaku”，devil's-tongue jelly,5,63,E043,>0,Unit:yen
+80,Pickled vegetables        ,5,64,E044,>0,Unit:yen
+81,Vegetables and seaweeds prepared in soy sauce,5,65,E045,>0,Unit:yen
+82,Others         ,5,66,E046,>0,Unit:yen
+83,Fruits         ,3,67,E047,>0,Unit:yen
+84,Fresh fruits        ,4,68,E048,>0,Unit:yen
+85,Preserved fruits        ,4,69,E049,>0,Unit:yen
+86,"Oils, fats and condiments      ",3,70,E050,>0,Unit:yen
+87,Oils and fats       ,4,71,E051,>0,Unit:yen
+88,Edible oil        ,5,72,E052,>0,Unit:yen
+89,Margarine         ,5,73,E053,>0,Unit:yen
+90,Condiments         ,4,74,E054,>0,Unit:yen
+91,Salt         ,5,75,E055,>0,Unit:yen
+92,Soy sauce        ,5,76,E056,>0,Unit:yen
+93,Miso         ,5,77,E057,>0,Unit:yen
+94,Sugar         ,5,78,E058,>0,Unit:yen
+95,Vinegar         ,5,79,E059,>0,Unit:yen
+96,Worcester sauce and tomato ketchup     ,5,80,E060,>0,Unit:yen
+97,Mayonnaise & mayonnaise flavor seasoning     ,5,81,E061,>0,Unit:yen
+98,Jam         ,5,82,E062,>0,Unit:yen
+99,Dressing         ,5,83,E063,>0,Unit:yen
+100,Instant curry mix       ,5,84,E064,>0,Unit:yen
+101,Other condiments        ,5,85,E065,>0,Unit:yen
+102,Cakes and candies       ,3,86,E066,>0,Unit:yen
+103,Cooked food        ,3,87,E067,>0,Unit:yen
+104,"Cooked food with rice,bread or noodles    ",4,88,E068,>0,Unit:yen
+105,Packed lunch        ,5,89,E069,>0,Unit:yen
+106,"“Sushi”, packed        ",5,90,E070,>0,Unit:yen
+107,“Onigiri”and others        ,5,91,E071,>0,Unit:yen
+108,Bread like sandwiches put cooked food between bread,5,92,E072,>0,Unit:yen
+109,Other cooked food with rice，bread or noodles,5,93,E073,>0,Unit:yen
+110,Other cooked food       ,4,94,E074,>0,Unit:yen
+111,Frozen food        ,5,95,E075,>0,Unit:yen
+112,Food stuff for cooking      ,5,96,E076,>0,Unit:yen
+113,Others         ,5,97,E077,>0,Unit:yen
+114,Beverages         ,3,98,E078,>0,Unit:yen
+115,Tea         ,4,99,E079,>0,Unit:yen
+116,Green tea        ,5,100,E080,>0,Unit:yen
+117,Black tea        ,5,101,E081,>0,Unit:yen
+118,Other tea leaves       ,5,102,E082,>0,Unit:yen
+119,Tea beverages        ,5,103,E083,>0,Unit:yen
+120,Coffee and cocoa       ,4,104,E084,>0,Unit:yen
+121,Coffee         ,5,105,E085,>0,Unit:yen
+122,Coffee beverages        ,5,106,E086,>0,Unit:yen
+123,Cocoa and cocoa beverages      ,5,107,E087,>0,Unit:yen
+124,Other beverages        ,4,108,E088,>0,Unit:yen
+125,Fruits and vegetable juice      ,5,109,E089,>0,Unit:yen
+126,Carbonated beverages        ,5,110,E090,>0,Unit:yen
+127,Fermented lactic beverages       ,5,111,E091,>0,Unit:yen
+128,Lactic beverages        ,5,112,E092,>0,Unit:yen
+129,Mineral water        ,5,113,E093,>0,Unit:yen
+130,Sports soft drinks       ,5,114,E094,>0,Unit:yen
+131,Others         ,3,115,E095,>0,Unit:yen
+132,Alcoholic beverages        ,4,116,E096,>0,Unit:yen
+133,“Sake”         ,4,117,E097,>0,Unit:yen
+134,"“Shochu”, distilled spirits       ",4,118,E098,>0,Unit:yen
+135,Beer         ,4,119,E099,>0,Unit:yen
+136,Whisky         ,4,120,E100,>0,Unit:yen
+137,Wine         ,4,121,E101,>0,Unit:yen
+138,Low-malt beer & beer-flavored alcoholic beverages    ,4,122,E102,>0,Unit:yen
+139,"Chu-hi,liquor with soda & fruit, & cocktail   ",3,123,E103,>0,Unit:yen
+140,Other alcoholic beverages       ,4,124,E104,>0,Unit:yen
+141,Eating out        ,5,125,E105,>0,Unit:yen
+142,General meals        ,5,126,E106,>0,Unit:yen
+143,Packed lunch (Home Delivery)      ,5,127,E107,>0,Unit:yen
+144,Other Meals        ,4,128,E108,>0,Unit:yen
+145,Refreshments         ,2,129,E109,>0,Unit:yen
+146,Drinking         ,3,130,E110,>0,Unit:yen
+147,School lunch        ,4,131,E111,>0,Unit:yen
+148,Housing         ,4,132,E112,>0,Unit:yen
+149,Rents for dwelling and land     ,3,133,E113,>0,Unit:yen
+150,Materials for repairs and maintenance     ,4,134,E114,>0,Unit:yen
+151,Solar power generation systems      ,5,135,E115,>0,Unit:yen
+152,Materials for maintenance       ,5,136,E116,>0,Unit:yen
+153,Service charges for repairs and maintenance    ,4,137,E117,>0,Unit:yen
+154,Service charges for installation      ,5,138,E118,>0,Unit:yen
+155,Fire and earthquake insurance premium     ,5,139,E119,>0,Unit:yen
+156,"Fuel, light and water charges     ",2,140,E120,>0,Unit:yen
+157,Electricity         ,3,141,E121,>0,Unit:yen
+158,Gas         ,3,142,E122,>0,Unit:yen
+159,Gas， manufactured and piped      ,4,143,E123,>0,Unit:yen
+160,Liquefied propane        ,4,144,E124,>0,Unit:yen
+161,Other fuel and light      ,3,145,E125,>0,Unit:yen
+162,Kerosene         ,4,146,E126,>0,Unit:yen
+163,Others         ,4,147,E127,>0,Unit:yen
+164,Water and sewerage charges      ,3,148,E128,>0,Unit:yen
+165,Furniture and household utensils      ,2,149,E129,>0,Unit:yen
+166,Household durables        ,3,150,E130,>0,Unit:yen
+167,Domestic durables        ,4,151,E131,>0,Unit:yen
+168,Microwave ovens        ,5,152,E132,>0,Unit:yen
+169,Electric cooking appliances       ,5,153,E133,>0,Unit:yen
+170,Gas cooking appliances       ,5,154,E134,>0,Unit:yen
+171,Refrigerators         ,5,155,E135,>0,Unit:yen
+172,Vacuum cleaners        ,5,156,E136,>0,Unit:yen
+173,Washing machines and clothes dryers     ,5,157,E137,>0,Unit:yen
+174,Sewing machines,5,158,E138,>0,Unit:yen
+175,Other domestic durables       ,5,159,E139,>0,Unit:yen
+176,Heating and cooling appliances      ,4,160,E140,>0,Unit:yen
+177,Air conditioners        ,5,161,E141,>0,Unit:yen
+178,Stove and fan heaters      ,5,162,E142,>0,Unit:yen
+179,Other heating and cooling appliances     ,5,163,E143,>0,Unit:yen
+180,General furniture        ,4,164,E144,>0,Unit:yen
+181,Chests of drawers       ,5,165,E145,>0,Unit:yen
+182,Dining suites        ,5,166,E146,>0,Unit:yen
+183,Sideboards         ,5,167,E147,>0,Unit:yen
+184,Other furniture        ,5,168,E148,>0,Unit:yen
+185,Interior furnishings and decorations,3,169,E149,>0,Unit:yen
+186,Lighting appliances        ,4,170,E150,>0,Unit:yen
+187,Interior decorations        ,4,171,E151,>0,Unit:yen
+188,Floor coverings        ,4,172,E152,>0,Unit:yen
+189,Curtains         ,4,173,E153,>0,Unit:yen
+190,Other interior furnishings       ,4,174,E154,>0,Unit:yen
+191,Bedding         ,3,175,E155,>0,Unit:yen
+192,Beds         ,4,176,E156,>0,Unit:yen
+193,Quilts         ,4,177,E157,>0,Unit:yen
+194,Blankets         ,4,178,E158,>0,Unit:yen
+195,Other bedding        ,4,179,E159,>0,Unit:yen
+196,Domestic utensils        ,3,180,E160,>0,Unit:yen
+197,Tableware         ,4,181,E161,>0,Unit:yen
+198,Kitchen utensils        ,4,182,E162,>0,Unit:yen
+199,Other domestic utensils       ,4,183,E163,>0,Unit:yen
+200,Domestic nondurable goods       ,3,184,E164,>0,Unit:yen
+201,Polyethylene bags and food wrap     ,4,185,E165,>0,Unit:yen
+202,Facial tissue and rolled toilet paper,4,186,E166,>0,Unit:yen
+203,Detergent for house & kitchen     ,4,187,E167,>0,Unit:yen
+204,"Detergent, laundry        ",4,188,E168,>0,Unit:yen
+205,Others         ,4,189,E169,>0,Unit:yen
+206,Domestic services        ,3,190,E170,>0,Unit:yen
+207,Domestic help        ,4,191,E171,>0,Unit:yen
+208,Dealing charges of large-sized discarded     ,4,192,E172,>0,Unit:yen
+209,Sewage disposal charges       ,4,193,E173,>0,Unit:yen
+210,Repair charges of furniture and domestic utensils   ,4,194,E174,>0,Unit:yen
+211,Rents of furniture and domestic utensils    ,4,195,E175,>0,Unit:yen
+212,Clothing and footwear       ,2,196,E176,>0,Unit:yen
+213,Japanese clothing        ,3,197,E177,>0,Unit:yen
+214,Men's Japanese clothing       ,4,198,E178,>0,Unit:yen
+215,Women's Japanese clothing       ,4,199,E179,>0,Unit:yen
+216,Children's Japanese clothing       ,4,200,E180,>0,Unit:yen
+217,Clothing         ,3,201,E181,>0,Unit:yen
+218,Men's clothing        ,4,202,E182,>0,Unit:yen
+219,Men's suits        ,5,203,E183,>0,Unit:yen
+220,Men's jackets        ,5,204,E184,>0,Unit:yen
+221,Men's slacks        ,5,205,E185,>0,Unit:yen
+222,Men's coats        ,5,206,E186,>0,Unit:yen
+223,Boys' school uniforms       ,5,207,E187,>0,Unit:yen
+224,Other men's clothing       ,5,208,E188,>0,Unit:yen
+225,Women's clothing        ,4,209,E189,>0,Unit:yen
+226,Women's dresses        ,5,210,E190,>0,Unit:yen
+227,Women's jackets        ,5,211,E191,>0,Unit:yen
+228,Skirts         ,5,212,E192,>0,Unit:yen
+229,Women's slacks        ,5,213,E193,>0,Unit:yen
+230,Women's coats        ,5,214,E194,>0,Unit:yen
+231,Girls' school uniforms       ,5,215,E195,>0,Unit:yen
+232,Other women's clothing       ,5,216,E196,>0,Unit:yen
+233,Children's clothing        ,4,217,E197,>0,Unit:yen
+234,Shirts and sweaters       ,3,218,E198,>0,Unit:yen
+235,Men's shirts and sweaters      ,4,219,E199,>0,Unit:yen
+236,Men's business shirts       ,5,220,E200,>0,Unit:yen
+237,Other men's shirts       ,5,221,E201,>0,Unit:yen
+238,Men's sweaters        ,5,222,E202,>0,Unit:yen
+239,Women's shirts and sweaters      ,4,223,E203,>0,Unit:yen
+240,Women's blouses        ,5,224,E204,>0,Unit:yen
+241,Other women's shirts       ,5,225,E205,>0,Unit:yen
+242,Women's sweaters        ,5,226,E206,>0,Unit:yen
+243,Children's shirts and sweaters      ,4,227,E207,>0,Unit:yen
+244,Children's shirts        ,5,228,E208,>0,Unit:yen
+245,Children's sweaters        ,5,229,E209,>0,Unit:yen
+246,Underwear         ,3,230,E210,>0,Unit:yen
+247,Men's underwear        ,4,231,E211,>0,Unit:yen
+248,Women's underwear        ,4,232,E212,>0,Unit:yen
+249,Children's underwear        ,4,233,E213,>0,Unit:yen
+250,Cloth and thread       ,3,234,E214,>0,Unit:yen
+251,Other clothing        ,3,235,E215,>0,Unit:yen
+252,Neckties         ,4,236,E216,>0,Unit:yen
+253,Men's socks        ,4,237,E217,>0,Unit:yen
+254,Women's socks        ,4,238,E218,>0,Unit:yen
+255,Children's socks        ,4,239,E219,>0,Unit:yen
+256,Others         ,4,240,E220,>0,Unit:yen
+257,Footwear         ,3,241,E221,>0,Unit:yen
+258,Canvas shoes        ,4,242,E222,>0,Unit:yen
+259,Men's shoes        ,4,243,E223,>0,Unit:yen
+260,Women's shoes        ,4,244,E224,>0,Unit:yen
+261,Children's shoes        ,4,245,E225,>0,Unit:yen
+262,Other footwear        ,4,246,E226,>0,Unit:yen
+263,Services related to clothing      ,3,247,E227,>0,Unit:yen
+264,Washing charges        ,4,248,E228,>0,Unit:yen
+265,Clothing rent        ,4,249,E229,>0,Unit:yen
+266,Other services related to clothing     ,4,250,E230,>0,Unit:yen
+267,Medical care        ,2,251,E231,>0,Unit:yen
+268,Medicines         ,3,252,E232,>0,Unit:yen
+269,Health fortification        ,3,253,E233,>0,Unit:yen
+270,Medical supplies and apploances,3,254,E234,>0,Unit:yen
+271,Paper diapers        ,4,255,E235,>0,Unit:yen
+272,Medical nondurables        ,4,256,E236,>0,Unit:yen
+273,Spectacles         ,4,257,E237,>0,Unit:yen
+274,Contact lenses        ,4,258,E238,>0,Unit:yen
+275,Other medical supplies and appliances     ,4,259,E239,>0,Unit:yen
+276,Medical services        ,3,260,E240,>0,Unit:yen
+277,Medical treatment        ,4,261,E241,>0,Unit:yen
+278,Dental treatment        ,4,262,E242,>0,Unit:yen
+279,"Hospital charges, delivery       ",4,263,E243,>0,Unit:yen
+280,Other hospital charges       ,4,264,E244,>0,Unit:yen
+281,Osteopathic，acupunctural and moxibustic services      ,4,265,E245,>0,Unit:yen
+282,Charges for massage etc. (not as medical examination & treatment),4,266,E246,>0,Unit:yen
+283,Other medical services       ,4,267,E247,>0,Unit:yen
+284,Transportation and communication       ,2,268,E248,>0,Unit:yen
+285,Public transportation        ,3,269,E249,>0,Unit:yen
+286,Railway fares        ,4,270,E250,>0,Unit:yen
+287,"Students' season tickets, railway      ",4,271,E251,>0,Unit:yen
+288,"Commuters' season tickets, railway      ",4,272,E252,>0,Unit:yen
+289,Bus fares        ,4,273,E253,>0,Unit:yen
+290,"Students' season tickets, bus      ",4,274,E254,>0,Unit:yen
+291,"Commuters' season tickets, bus      ",4,275,E255,>0,Unit:yen
+292,Taxi fares        ,4,276,E256,>0,Unit:yen
+293,Airplane fares        ,4,277,E257,>0,Unit:yen
+294,Highway fares        ,4,278,E258,>0,Unit:yen
+295,Other public transportation       ,4,279,E259,>0,Unit:yen
+296,Private transportation        ,3,280,E260,>0,Unit:yen
+297,Perchase of vehicles       ,4,281,E261,>0,Unit:yen
+298,Automobiles         ,5,282,E262,>0,Unit:yen
+299,Other vehicles        ,5,283,E263,>0,Unit:yen
+300,Bicycles         ,4,284,E264,>0,Unit:yen
+301,Automotive maintenance        ,4,285,E265,>0,Unit:yen
+302,Gasoline         ,5,286,E266,>0,Unit:yen
+303,Automotive parts        ,5,287,E267,>0,Unit:yen
+304,Articles related to private transportation     ,5,288,E268,>0,Unit:yen
+305,Automotive maintenance and repairs      ,5,289,E269,>0,Unit:yen
+306,"Yearly and monthly rent, for park    ",5,290,E270,>0,Unit:yen
+307,"Other rent, for park      ",5,291,E271,>0,Unit:yen
+308,Charges for rental car & carsharing    ,5,292,E272,>0,Unit:yen
+309,Other services related to private transportation    ,5,293,E273,>0,Unit:yen
+310,Automotive insurance premium       ,5,294,E274,>0,Unit:yen
+311,Vehicular insurance premium (except automobiles)     ,5,295,E275,>0,Unit:yen
+312,Communication         ,3,296,E276,>0,Unit:yen
+313,Postage         ,4,297,E277,>0,Unit:yen
+314,Telephone charges        ,4,298,E278,>0,Unit:yen
+315,Mobile telephone charges       ,4,299,E279,>0,Unit:yen
+316,Mobile telephone        ,4,300,E280,>0,Unit:yen
+317,Other Communication equipments       ,4,301,E281,>0,Unit:yen
+318,Door-to-door trucking service       ,4,302,E282,>0,Unit:yen
+319,Other carriage fees       ,4,303,E283,>0,Unit:yen
+320,Education         ,2,304,E284,>0,Unit:yen
+321,School fees        ,3,305,E285,>0,Unit:yen
+322,Elementary school fees，national or public     ,4,306,E286,>0,Unit:yen
+323,"Elementary school fees, private      ",4,307,E287,>0,Unit:yen
+324,Junior high school fees，national or public,4,308,E288,>0,Unit:yen
+325,"Junior high school fees, private",4,309,E289,>0,Unit:yen
+326,High school fees，national or public,4,310,E290,>0,Unit:yen
+327,"High school fees, private",4,311,E291,>0,Unit:yen
+328,College and university fees，national or public,4,312,E292,>0,Unit:yen
+329,"College and university fees, private",4,313,E293,>0,Unit:yen
+330,Kindergarten fees，national or public,4,314,E294,>0,Unit:yen
+331,Kindergarten fees，private,4,315,E295,>0,Unit:yen
+332,Special training school fees      ,4,316,E296,>0,Unit:yen
+333,School textbooks and reference books for study,3,317,E297,>0,Unit:yen
+334,Tutorial fees        ,3,318,E298,>0,Unit:yen
+335,Children and elementary school tutorial fees    ,4,319,E299,>0,Unit:yen
+336,Junior high school tutorial fees     ,4,320,E300,>0,Unit:yen
+337,High school tutorial and prep school fees   ,4,321,E301,>0,Unit:yen
+338,Reading and recreation       ,2,322,E302,>0,Unit:yen
+339,Recreational durable goods       ,3,323,E303,>0,Unit:yen
+340,TV sets        ,4,324,E304,>0,Unit:yen
+341,Equipment for receiving，recording and play-back of sound and pictures (portable),4,325,E305,>0,Unit:yen
+342,Video recorders & players      ,4,326,E306,>0,Unit:yen
+343,Personal computers        ,4,327,E307,>0,Unit:yen
+344,Cameras         ,4,328,E308,>0,Unit:yen
+345,Video cameras        ,4,329,E309,>0,Unit:yen
+346,Musical instruments        ,4,330,E310,>0,Unit:yen
+347,Desks and chairs for students and office workers,4,331,E311,>0,Unit:yen
+348,Other recreational durable goods,4,332,E312,>0,Unit:yen
+349,Repair charges of recreational durables,4,333,E313,>0,Unit:yen
+350,Recreational goods        ,3,334,E314,>0,Unit:yen
+351,Stationery durables        ,4,335,E315,>0,Unit:yen
+352,Stationery nondurables        ,4,336,E316,>0,Unit:yen
+353,Sporting goods        ,4,337,E317,>0,Unit:yen
+354,Sporting outfits        ,4,338,E318,>0,Unit:yen
+355,TV game machines       ,4,339,E319,>0,Unit:yen
+356,TV Game software etc.      ,4,340,E320,>0,Unit:yen
+357,Other toys        ,4,341,E321,>0,Unit:yen
+358,Unrecorded recording media       ,4,342,E322,>0,Unit:yen
+359,Prerecorded recording media       ,4,343,E323,>0,Unit:yen
+360,Cut flowers        ,4,344,E324,>0,Unit:yen
+361,Pet food        ,4,345,E325,>0,Unit:yen
+362,Other pets and related goods     ,4,346,E326,>0,Unit:yen
+363,Veterinary services        ,4,347,E327,>0,Unit:yen
+364,Gardening goods        ,4,348,E328,>0,Unit:yen
+365,Batteries         ,4,349,E329,>0,Unit:yen
+366,Others recreational goods,4,350,E330,>0,Unit:yen
+367,Repair charges of recreational goods,4,351,E331,>0,Unit:yen
+368,Books and other reading materials     ,3,352,E332,>0,Unit:yen
+369,Newspapers         ,4,353,E333,>0,Unit:yen
+370,Magazines (include weekly magazines)      ,4,354,E334,>0,Unit:yen
+371,Books         ,4,355,E335,>0,Unit:yen
+372,Other reading materials       ,4,356,E336,>0,Unit:yen
+373,Recreational services        ,3,357,E337,>0,Unit:yen
+374,Hotel charges        ,4,358,E338,>0,Unit:yen
+375,Package tours        ,4,359,E339,>0,Unit:yen
+376,Domestic package tours       ,5,360,E340,>0,Unit:yen
+377,Overseas package tours       ,5,361,E341,>0,Unit:yen
+378,Lesson fees        ,4,362,E342,>0,Unit:yen
+379,"Lesson fees, language       ",5,363,E343,>0,Unit:yen
+380,Lesson fees，other educational       ,5,364,E344,>0,Unit:yen
+381,"Lesson fees,music        ",5,365,E345,>0,Unit:yen
+382,"Lesson fees,other cultural       ",5,366,E346,>0,Unit:yen
+383,"Lesson fees, sporting       ",5,367,E347,>0,Unit:yen
+384,"Lesson fees, driving school      ",5,368,E348,>0,Unit:yen
+385,Other private lesson fees      ,5,369,E349,>0,Unit:yen
+386,Other recreational services,4,370,E350,>0,Unit:yen
+387,NHK TV licence fees      ,5,371,E351,>0,Unit:yen
+388,CATV licence fees       ,5,372,E352,>0,Unit:yen
+389,Other TV licence fees      ,5,373,E353,>0,Unit:yen
+390,Admissions fees，movies，plays，cultural establishments，etc．,5,374,E354,>0,Unit:yen
+391,"Admissions fees, sports       ",5,375,E355,>0,Unit:yen
+392,Charges for playing & practicing golf,5,376,E356,>0,Unit:yen
+393,Gym charges        ,5,377,E357,>0,Unit:yen
+394,Other charges for sports facilities     ,5,378,E358,>0,Unit:yen
+395,Admission and playing fees，amusement park,5,379,E359,>0,Unit:yen
+396,Other admissions and game fees     ,5,380,E360,>0,Unit:yen
+397,Membership dues        ,5,381,E361,>0,Unit:yen
+398,Photography & photographic processing charges     ,5,382,E362,>0,Unit:yen
+399,Hire of recreational goods      ,5,383,E363,>0,Unit:yen
+400,Internet connection charges       ,5,384,E364,>0,Unit:yen
+401,Content usage fees       ,5,385,E365,>0,Unit:yen
+402,Other living expenditure,2,386,E366,>0,Unit:yen
+403,Miscellaneous         ,3,387,E367,>0,Unit:yen
+404,Personal care services       ,4,388,E368,>0,Unit:yen
+405,Admission fees for hot spring and public baths  ,5,389,E369,>0,Unit:yen
+406,Haircut charges        ,5,390,E370,>0,Unit:yen
+407,Permanent wave and hair cut charges,5,391,E371,>0,Unit:yen
+408,Other personal care charges      ,5,392,E372,>0,Unit:yen
+409,Toilet articles        ,4,393,E373,>0,Unit:yen
+410,Electric appliances for personal care,5,394,E374,>0,Unit:yen
+411,Other toilet articles       ,5,395,E375,>0,Unit:yen
+412,Bath and facial soap      ,5,396,E376,>0,Unit:yen
+413,Shampoo and toothpaste       ,5,397,E377,>0,Unit:yen
+414,Hairdressing liquid        ,5,398,E378,>0,Unit:yen
+415,Cosmetics         ,5,399,E379,>0,Unit:yen
+416,Personal effects        ,4,400,E380,>0,Unit:yen
+417,Umbrellas         ,5,401,E381,>0,Unit:yen
+418,Bags         ,5,402,E382,>0,Unit:yen
+419,Accessories         ,5,403,E383,>0,Unit:yen
+420,Wrist watches        ,5,404,E384,>0,Unit:yen
+421,Other personal effects       ,5,405,E385,>0,Unit:yen
+422,Related services to personal effects     ,5,406,E386,>0,Unit:yen
+423,Tobacco         ,4,407,E387,>0,Unit:yen
+424,Other miscellaneous        ,4,408,E388,>0,Unit:yen
+425,Religious contribution        ,5,409,E389,>0,Unit:yen
+426,Family alter and gravestones      ,5,410,E390,>0,Unit:yen
+427,Wedding expenses        ,5,411,E391,>0,Unit:yen
+428,Funeral expenses        ,5,412,E392,>0,Unit:yen
+429,Other ceremonials        ,5,413,E393,>0,Unit:yen
+430,Other Non-savings type premium      ,5,414,E394,>0,Unit:yen
+431,Donations         ,5,415,E395,>0,Unit:yen
+432,Nursery fees        ,5,416,E396,>0,Unit:yen
+433,Nursing care services,5,417,E397,>0,Unit:yen
+434,Others         ,5,418,E398,>0,Unit:yen
+435,Pocket money（of which，detailed uses unknown）       ,3,419,E399,>0,Unit:yen
+436,"Pocket money, household head      ",4,420,E400,>0,Unit:yen
+437,"Pocket money, other members      ",4,421,E401,>0,Unit:yen
+438,Social expenses        ,3,422,E402,>0,Unit:yen
+439,Money gifts        ,4,423,E403,>0,Unit:yen
+440,Other social expenses       ,4,424,E404,>0,Unit:yen
+441,Social expenses        ,5,425,E405,>0,Unit:yen
+442,Obligation fees related to housing     ,5,426,E406,>0,Unit:yen
+443,Other obligation fees       ,5,427,E407,>0,Unit:yen
+444,Remittance         ,3,428,E408,>0,Unit:yen
+445,Remittance to children away from home，domestic    ,4,429,E409,>0,Unit:yen
+446,Other remittance        ,4,430,E410,>0,Unit:yen
