@@ -72,10 +72,16 @@ shinyUI(
                mainPanel(
                  tabsetPanel(
                    tabPanel("summary",shiny::dataTableOutput("resultset"))
-                   , tabPanel("plot",shiny::plotOutput("confrontationplot"))
+                   , tabPanel("plot",shiny::plotOutput("confrontationplot"),
+                              # Download Report Button
+                              downloadButton("report", "Download Report"))
+                   , tabPanel("details", shiny::dataTableOutput("detailset"), 
+                              # Download details Button
+                              downloadButton("detailed_results", "Download Detailed Results"))
+                              )
                  )
                )
-             )),
+             ),
     tabPanel("Error localization",
              # sidebarLayout(
                # sidebarPanel(

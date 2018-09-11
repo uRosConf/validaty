@@ -134,6 +134,31 @@ shinyServer(function(input, output, session) {
   output$resultset <- renderDataTable(summary(ResultSet()))
   output$confrontationplot <- renderPlot(plot(ResultSet(),main="Results by rule"))
   
+  output$detailset <- renderDataTable(as.data.frame(ResultSet()))
+  
+  # Download details as csv
+  output$detailed_results <- downloadHandler(
+    filename = "detailed_results.csv"
+    ,
+    content = function(file) {
+      write.csv(as.data.frame(ResultSet()), file, row.names = FALSE)
+    }
+  )
+  
+  
+  # Download plot in a pdf file 
+  output$report = downloadHandler(
+    filename = "report.pdf",
+    
+    content = function(file) {
+      pdf(file) # open the pdf device
+      plot(ResultSet(),main="Results by rule")
+      dev.off()
+      
+    }
+  )
+  
+  
   ## Error localization ----
   error_locs <- reactive({
     locate_errors(DataSet(), RuleSet())
