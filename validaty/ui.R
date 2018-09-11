@@ -33,8 +33,14 @@ shinyUI(
                  tabsetPanel(
                    tabPanel("View Rules",
                             shiny::dataTableOutput("rules")),
-                   tabPanel("View Coverage",
-                            "plot to be added"))))
+                   tabPanel("Coverage",
+                            shiny::plotOutput("ruleplot"),
+                            shiny::htmlOutput("variablesCovered"),
+                            shiny::htmlOutput("variablesNotCovered")
+                            ),
+                   tabPanel("Consistency",
+                            "Rule")
+               )))
                  ),
     tabPanel("Confrontation",
              sidebarLayout(
