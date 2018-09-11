@@ -1,0 +1,20 @@
+---
+options:
+    lin.eq.eps: 5
+---
+rules:
+- expr: staff >= 0
+  name: V1
+  label: ''
+  description: ''
+  created: 2018-09-10 14:31:02
+  origin: testrules.R
+  meta: []
+- expr: turnover + other.rev == total.rev
+  name: V2
+  label: ''
+  description: ''
+  created: 2018-09-10 14:31:02
+  origin: testrules.R
+  meta: []
+
