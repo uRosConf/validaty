@@ -8,6 +8,10 @@
 #
 
 library(shiny)
+library(validatetools)
+library(data.table)
+library(validate)
+
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
@@ -47,18 +51,20 @@ shinyServer(function(input, output, session) {
     validate::validator(.file=RuleFile()$datapath)
   })
   
-  output$RuleSet <- RuleSet
   output$rules <- renderDataTable({
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
   
-  observe({
-    updateSelectInput(session, "selected_rule"
-              , choices=c("Add new",names(RuleSet())) )
-  })
-  
-  
+  # observe({
+  #   updateSelectizeInput(session, "selected_rule"
+  #             , choices=c("Add new",names(RuleSet())),
+  #             server = TRUE)
+  # })
+  # observe({
+  #   print(input$selected_rule)
+  # })
+   
   
   # Download rules as yaml file
   output$my_rules <- downloadHandler(
@@ -69,18 +75,11 @@ shinyServer(function(input, output, session) {
     }
   )
 
-  
-  
-  
-  
-  
-  
- 
+  ## Variable coverage ----
   
   output$ruleplot <- renderPlot({
     plot(RuleSet())
   })
-  
   
   output$variablesCovered <- renderText({
     vrs <- paste(variables(RuleSet()),collapse=", ")
@@ -94,6 +93,29 @@ shinyServer(function(input, output, session) {
     HTML("<b>Variables not covered: </b> ",paste(vrs, collapse=", "))
   })
 
+  ## Rule inspection ----
+  observe({
+    rls <- RuleSet()
+    fixed <- validatetools::detect_fixed_variables(rls)
+    fixed <- if (is.null(fixed)){
+      data.frame(variable=character(0), value=numeric(0))
+    } else {
+      data.frame(variable=names(fixed), value=sapply(fixed, identity))
+    }
+    
+    num_bdr <- validatetools::detect_boundary_num(rls)
+    cat_bdr <- validatetools::detect_boundary_cat(rls)
+    
+    
+    
+    output$cat_bdr <- renderDataTable(cat_bdr)
+    output$num_bdr <- renderDataTable(num_bdr)
+    output$fixed_variables <- renderDataTable(fixed)
+  })
+  
+  
+  
+  
   ## Confrontation ----
   observe({
     updateNumericInput(session

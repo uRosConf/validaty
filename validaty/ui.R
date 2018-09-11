@@ -8,8 +8,7 @@
 #
 
 library(shiny)
-library(data.table)
-library(validate)
+
 
 # Define UI for application that draws a histogram
 shinyUI(
@@ -36,22 +35,29 @@ shinyUI(
                             # Download Rules Button
                             downloadButton("my_rules", "Download Rules")
                             ),
-                   tabPanel("Manager",
-                       shiny::selectInput("selected_rule","Select rule"
-                                          , choices="Add new"),
-                       shiny::textAreaInput("rule_exp","Expression"),
-                       shiny::textInput("rule_name","Name"),
-                       shiny::textInput("rule_label","Lalel"),
-                       shiny::textInput("rule_description","Description")
-                       # shiny::actionButton("rule_update","Update")
-                       ),
+                   # tabPanel("Manager",
+                   #     shiny::selectInput("selected_rule","Select rule"
+                   #                        , choices=c("Add new","B"),selected = "B"),
+                   #     shiny::textAreaInput("rule_exp","Expression"),
+                   #     shiny::textInput("rule_name","Name"),
+                   #     shiny::textInput("rule_label","Lalel"),
+                   #     shiny::textInput("rule_description","Description")
+                   #     # shiny::actionButton("rule_update","Update")
+                   #     ),
                    tabPanel("Coverage",
                             shiny::plotOutput("ruleplot"),
                             shiny::htmlOutput("variablesCovered"),
                             shiny::htmlOutput("variablesNotCovered")
                             ),
-                   tabPanel("Consistency",
-                            "Rule")
+                   tabPanel("Imposed limits",
+                            tags$h3("Boundaries"),
+                            tags$em("Limits imposed by the rule set"),
+                            shiny::dataTableOutput("num_bdr"),
+                            shiny::dataTableOutput("cat_bdr"),
+                            tags$h3("Fixed values"),
+                            tags$em("Variables which can only take one value under the current rule set"),
+                            shiny::dataTableOutput("fixed_variables")
+                            )
                )))
                  ),
     tabPanel("Confrontation",
