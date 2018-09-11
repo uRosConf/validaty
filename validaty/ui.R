@@ -10,6 +10,7 @@
 library(shiny)
 library(data.table)
 library(validate)
+library(DT)
 
 # Define UI for application that draws a histogram
 shinyUI(
@@ -70,5 +71,30 @@ shinyUI(
                )
              )),
     tabPanel("Error localization",
-             "Input needed here")
-  ))
+             # sidebarLayout(
+               # sidebarPanel(
+                 # selectInput("rules", "Select rules for inspection",
+                 #             choices = "Confront first",
+                 #             multiple = TRUE)
+                 
+               # ),
+               # mainPanel(
+                 tabsetPanel(
+                   tabPanel("Summary", 
+                            fluidRow(
+                              column(width = 6,
+                              tags$h2("Summary by variable"),
+                              dataTableOutput("el_var")),
+                              # hr(),
+                              column(width = 6,
+                                     tags$h2("Summary by record"),
+                              dataTableOutput("el_rec")))),
+                   tabPanel("Detailed",
+                            
+                              DT::dataTableOutput("el_rows")#,
+                              
+                   )
+                   # )
+                 )
+    ))
+)

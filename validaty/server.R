@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(errorlocate)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
@@ -110,4 +111,62 @@ shinyServer(function(input, output, session) {
   
   output$resultset <- renderDataTable(summary(ResultSet()))
   output$confrontationplot <- renderPlot(plot(ResultSet(),main="Results by rule"))
-})
+  
+  ## Error localization ----
+  error_locs <- reactive({
+    locate_errors(DataSet(), RuleSet())
+  })
+  el_summary <- reactive({
+    summary(error_locs())
+  })
+  el_rules <- reactive({
+    el_summary()[[1]][el_summary()[[1]]$errors > 0, "name"]
+  })
+  
+  output$el_var  <- renderDataTable(el_summary()[[1]])
+  output$el_rec  <- renderDataTable(as.data.table(el_summary()[[2]]))
+  
+  observe({
+    erronous_rules <- el_rules()
+    updateSelectInput(session, inputId = "rules",
+                      choices = erronous_rules)
+  })
+  
+  error_ind <- reactive({
+    which(values(error_locs()), arr.ind = TRUE)
+  })
+  
+  val_values <- reactive({
+    values(ResultSet())
+  })
+  
+  
+  tab <- reactive({
+    err_ind <- error_ind()
+    DT <- DT::datatable(DataSet())#[error_ind()[, 1], ])#error_ind()[, 2], with = FALSE])
+    DT <- DT::datatable(DataSet()[error_ind()[, 1], unique(error_ind()[, 2]), with = FALSE])
+    # for (col in error_ind()[, 2]) {
+    #   DT <- formatStyle(DT,
+    #                     columns = col,
+    #                     target = "cell",
+    #                     backgroundColor = "red")
+    # }
+    return(DT)
+  })
+  
+  
+  output$el_rows <- renderDataTable(
+    tab()
+  )
+}
+) 
+  
+  
+  
+  
+  # output$el_rows <- ifelse(input$rules == "",
+  #                          renderDataTable(DataSet()[error_ind()[, 1], ]),
+  #                          renderDataTable(DataSet()[val_values()[, "V2"] == FALSE]))
+  
+  
+
