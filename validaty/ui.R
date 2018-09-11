@@ -34,11 +34,17 @@ shinyUI(
                    tabPanel("View Rules",
                             shiny::dataTableOutput("rules"),
                             # Download Rules Button
-                            downloadButton("my_rules", "Download Rules")),
-                   tabPanel("View Coverage",
-                            "plot to be added"))))
-                 )
-                 ,
+                            downloadButton("my_rules", "Download Rules")
+                            ),
+                   tabPanel("Coverage",
+                            shiny::plotOutput("ruleplot"),
+                            shiny::htmlOutput("variablesCovered"),
+                            shiny::htmlOutput("variablesNotCovered")
+                            ),
+                   tabPanel("Consistency",
+                            "Rule")
+               )))
+                 ),
     tabPanel("Confrontation",
              sidebarLayout(
                sidebarPanel(

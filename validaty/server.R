@@ -69,7 +69,23 @@ shinyServer(function(input, output, session) {
   
  
   
+  output$ruleplot <- renderPlot({
+    plot(RuleSet())
+  })
   
+  
+  output$variablesCovered <- renderText({
+    vrs <- paste(variables(RuleSet()),collapse=", ")
+    HTML("<b>Variables covered: </b>", vrs)  
+    })
+  
+  output$variablesNotCovered <- renderText({
+    validate(need(DataSet(),"No data loaded"))
+    vrs <- names(DataSet())
+    vrs <- vrs[!vrs %in% variables(RuleSet())]
+    HTML("<b>Variables not covered: </b> ",paste(vrs, collapse=", "))
+  })
+
   ## Confrontation ----
   observe({
     updateNumericInput(session
@@ -85,5 +101,5 @@ shinyServer(function(input, output, session) {
   })
   
   output$resultset <- renderDataTable(summary(ResultSet()))
-  output$confrontationplot <- renderPlot(plot(ResultSet()))
+  output$confrontationplot <- renderPlot(plot(ResultSet(),main="Results by rule"))
 })
