@@ -52,6 +52,24 @@ shinyServer(function(input, output, session) {
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
+  # Download rules as yaml file
+  output$my_rules <- downloadHandler(
+  
+    filename = "my_rules.yaml",
+    content = function(file) {
+      validate::export_yaml(RuleSet(), file)
+    }
+  )
+
+  
+  
+  
+  
+  
+  
+ 
+  
+  
   ## Confrontation ----
   observe({
     updateNumericInput(session

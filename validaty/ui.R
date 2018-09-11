@@ -32,7 +32,9 @@ shinyUI(
                mainPanel(
                  tabsetPanel(
                    tabPanel("View Rules",
-                            shiny::dataTableOutput("rules")),
+                            shiny::dataTableOutput("rules"),
+                            # Download Rules Button
+                            downloadButton("my_rules", "Download Rules")),
                    tabPanel("View Coverage",
                             "plot to be added"))))
                  )
