@@ -35,8 +35,7 @@ shinyUI(
                             shiny::dataTableOutput("rules")),
                    tabPanel("View Coverage",
                             "plot to be added"))))
-                 )
-                 ,
+                 ),
     tabPanel("Confrontation",
              sidebarLayout(
                sidebarPanel(

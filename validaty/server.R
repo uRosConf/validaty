@@ -67,5 +67,5 @@ shinyServer(function(input, output, session) {
   })
   
   output$resultset <- renderDataTable(summary(ResultSet()))
-  output$confrontationplot <- renderPlot(plot(ResultSet()))
+  output$confrontationplot <- renderPlot(plot(ResultSet(),main="Results by rule"))
 })
