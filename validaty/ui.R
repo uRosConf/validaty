@@ -10,7 +10,6 @@
 library(shiny)
 library(data.table)
 library(validate)
-#library(DT)
 
 # Define UI for application that draws a histogram
 shinyUI(
@@ -98,7 +97,7 @@ shinyUI(
                               dataTableOutput("el_rec")))),
                    tabPanel("Detailed",
                             
-                              DT::dataTableOutput("el_rows")#,
+                              dataTableOutput("el_rows")#,
                               
                    )
                    # )

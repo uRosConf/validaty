@@ -163,32 +163,8 @@ shinyServer(function(input, output, session) {
   })
   
   
-  tab <- reactive({
-    err_ind <- error_ind()
-    DT <- DT::datatable(DataSet())#[error_ind()[, 1], ])#error_ind()[, 2], with = FALSE])
-    DT <- DT::datatable(DataSet()[error_ind()[, 1], unique(error_ind()[, 2]), with = FALSE])
-    # for (col in error_ind()[, 2]) {
-    #   DT <- formatStyle(DT,
-    #                     columns = col,
-    #                     target = "cell",
-    #                     backgroundColor = "red")
-    # }
-    return(DT)
-  })
-  
-  
   output$el_rows <- renderDataTable(
-    tab()
+     subset(as.data.frame(error_locs()), apply(values(error_locs()),1,any))
   )
-}
-) 
+}) 
   
-  
-  
-  
-  # output$el_rows <- ifelse(input$rules == "",
-  #                          renderDataTable(DataSet()[error_ind()[, 1], ]),
-  #                          renderDataTable(DataSet()[val_values()[, "V2"] == FALSE]))
-  
-  
-
