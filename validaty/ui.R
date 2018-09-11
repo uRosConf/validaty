@@ -36,6 +36,15 @@ shinyUI(
                             # Download Rules Button
                             downloadButton("my_rules", "Download Rules")
                             ),
+                   tabPanel("Manager",
+                       shiny::selectInput("selected_rule","Select rule"
+                                          , choices="Add new"),
+                       shiny::textAreaInput("rule_exp","Expression"),
+                       shiny::textInput("rule_name","Name"),
+                       shiny::textInput("rule_label","Lalel"),
+                       shiny::textInput("rule_description","Description")
+                       # shiny::actionButton("rule_update","Update")
+                       ),
                    tabPanel("Coverage",
                             shiny::plotOutput("ruleplot"),
                             shiny::htmlOutput("variablesCovered"),

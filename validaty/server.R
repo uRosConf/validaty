@@ -52,6 +52,14 @@ shinyServer(function(input, output, session) {
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
+  
+  observe({
+    updateSelectInput(session, "selected_rule"
+              , choices=c("Add new",names(RuleSet())) )
+  })
+  
+  
+  
   # Download rules as yaml file
   output$my_rules <- downloadHandler(
   
