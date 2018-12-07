@@ -1,0 +1,10 @@
+# rules_retailers.txt
+
+turnover >= 0
+other.rev  >= 0
+total.costs >= 0
+
+turnover + other.rev == total.rev
+tunover - total.costs == profit
+
+staff.costs >= staff
