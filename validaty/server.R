@@ -1,11 +1,3 @@
-library(shiny)
-library(errorlocate)
-library(validatetools)
-library(data.table)
-library(validate)
-library(shinyjs)
-
-# Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
   
   RulesAvailable <- reactiveVal(FALSE)
@@ -47,8 +39,17 @@ shinyServer(function(input, output, session) {
   # The user's data, parsed into a data frame
   observe({
     rr <- validate::validator(.file = RuleFile()$datapath)
-    RuleSet(rr)
-    RulesDF(as.data.frame(rr))
+    if (length(rr) == 0) {
+      shinyjs::show("view_err")
+      shinyjs::hide("my_rules")
+    } else {
+      shinyjs::hide("view_err")
+      shinyjs::show("my_rules")
+      
+      RulesAvailable(TRUE)
+      RuleSet(rr)
+      RulesDF(as.data.frame(rr))
+    }
   })
   
   ## show modify rules ui
@@ -76,7 +77,6 @@ shinyServer(function(input, output, session) {
         inputId = "modify_rulename", 
         choices = nn)
     }
-    RulesAvailable(TRUE)
   })  
   
   observeEvent(input$modify_what, {
@@ -266,16 +266,7 @@ shinyServer(function(input, output, session) {
     )
     ResultSet(res)
   })
-  # 
-  # ResultSet <- reactive({
-  #   confront(
-  #     DataSet(),
-  #     RuleSet(),
-  #     key = ifelse(input$key == "no key", NA_character_, input$key),
-  #     lin.eq.eps = input$lin.eq.eps
-  #   )
-  # })
-  # 
+
   output$resultset <- shiny::renderDataTable(summary(ResultSet()))
   output$confrontationplot <-
     renderPlot(plot(ResultSet(), main = "Results by rule"))
@@ -303,13 +294,23 @@ shinyServer(function(input, output, session) {
   
   ## Error localization ----
   error_locs <- reactive({
-    locate_errors(DataSet(), RuleSet())
+    if (DataAvailable() & RulesAvailable()) {
+      locate_errors(DataSet(), RuleSet())
+    } else {
+      NULL
+    }
   })
   el_summary <- reactive({
-    summary(error_locs())
+    if (DataAvailable() & RulesAvailable()) {
+      summary(error_locs())
+    }
   })
   el_rules <- reactive({
-    el_summary()[[1]][el_summary()[[1]]$errors > 0, "name"]
+    if (DataAvailable() & RulesAvailable()) {
+      el_summary()[[1]][el_summary()[[1]]$errors > 0, "name"]
+    } else {
+      NULL
+    }
   })
 
   output$el_var  <- renderDataTable(el_summary()[[1]])
@@ -331,5 +332,4 @@ shinyServer(function(input, output, session) {
   output$el_rows <- renderDataTable(
     subset(as.data.frame(error_locs()), apply(values(error_locs(
   )), 1, any)))
-}) 
-  
+})

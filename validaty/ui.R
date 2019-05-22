@@ -1,8 +1,3 @@
-library(shiny)
-library(data.table)
-library(validate)
-
-# Define UI for application that draws a histogram
 shinyUI(
   navbarPage(
     useShinyjs(),
@@ -26,6 +21,9 @@ shinyUI(
         mainPanel(
           tabsetPanel(id = "ts_rules",
             tabPanel("View Rules", value = "tp_view",
+              hidden(
+                h3(id = "view_err", "Error: Invalid input detected. Please try another file.")
+              ),
               shiny::dataTableOutput("rules"),
               # Download Rules Button
               downloadButton("my_rules", "Download Rules")
