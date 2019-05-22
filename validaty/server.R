@@ -56,6 +56,26 @@ shinyServer(function(input, output, session) {
      as.data.frame(RuleSet())[c("name","label","rule")]
   })
   
+  observe({
+    df <- as.data.frame(RuleSet())
+    updateSelectizeInput(session, inputId = "modifyrulename", choices = df$name, server = TRUE)
+  })  
+  
+  observeEvent(input$modifyrulename, {
+    #rule <- input$modify_rulename
+    #print(str(rule))
+    message("firing!")
+    
+    #if (rule != "") {
+    #  message("if")
+    #  df <- as.data.frame(RuleSet())
+    #  expr <- df[df$name == input$modify_rulename, "rule"]
+    #  updateTextInput(session, inputId = "modify_editrule", value = expr)
+    #}
+  })  
+  
+  
+  
   
   # observe({
   #   updateSelectizeInput(session, "selected_rule"
@@ -69,7 +89,6 @@ shinyServer(function(input, output, session) {
   
   # Download rules as yaml file
   output$my_rules <- downloadHandler(
-  
     filename = "my_rules.yaml",
     content = function(file) {
       validate::export_yaml(RuleSet(), file)
@@ -107,15 +126,10 @@ shinyServer(function(input, output, session) {
     num_bdr <- validatetools::detect_boundary_num(rls)
     cat_bdr <- validatetools::detect_boundary_cat(rls)
     
-    
-    
     output$cat_bdr <- renderDataTable(cat_bdr)
     output$num_bdr <- renderDataTable(num_bdr)
     output$fixed_variables <- renderDataTable(fixed)
   })
-  
-  
-  
   
   ## Confrontation ----
   observe({
@@ -144,8 +158,7 @@ shinyServer(function(input, output, session) {
       write.csv(as.data.frame(ResultSet()), file, row.names = FALSE)
     }
   )
-  
-  
+
   # Download plot in a pdf file 
   output$report = downloadHandler(
     filename = "report.pdf",
@@ -154,7 +167,6 @@ shinyServer(function(input, output, session) {
       pdf(file) # open the pdf device
       plot(ResultSet(),main="Results by rule")
       dev.off()
-      
     }
   )
   
@@ -175,8 +187,7 @@ shinyServer(function(input, output, session) {
   
   observe({
     erronous_rules <- el_rules()
-    updateSelectInput(session, inputId = "rules",
-                      choices = erronous_rules)
+    updateSelectInput(session, inputId = "rules", choices = erronous_rules)
   })
   
   error_ind <- reactive({
@@ -186,8 +197,7 @@ shinyServer(function(input, output, session) {
   val_values <- reactive({
     values(ResultSet())
   })
-  
-  
+
   output$el_rows <- renderDataTable(
      subset(as.data.frame(error_locs()), apply(values(error_locs()),1,any))
   )

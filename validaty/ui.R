@@ -36,7 +36,22 @@ shinyUI(
                             # Download Rules Button
                             downloadButton("my_rules", "Download Rules")
                             ),
-                   # tabPanel("Manager",
+                   
+                   tabPanel("Modify rules",
+                      h3("Modify "),
+                      shiny::radioButtons(inputId = "modify_what",
+                                          label = "What do you want to do?",
+                                          choices = c("add", "remove", "edit"),
+                                          inline = TRUE),
+                      shiny::selectizeInput(inputId = "modifyrulename",
+                                         label = "select a rule",
+                                         selected = NULL,
+                                         choices = c()),
+                      shiny::textInput(inputId = "modify_editrule",
+                                       label = "add/edit rule",
+                                       value = "")
+                      
+                      
                    #     shiny::selectInput("selected_rule","Select rule"
                    #                        , choices=c("Add new","B"),selected = "B"),
                    #     shiny::textAreaInput("rule_exp","Expression"),
@@ -44,7 +59,7 @@ shinyUI(
                    #     shiny::textInput("rule_label","Lalel"),
                    #     shiny::textInput("rule_description","Description")
                    #     # shiny::actionButton("rule_update","Update")
-                   #     ),
+                        ),
                    tabPanel("Coverage",
                             shiny::plotOutput("ruleplot"),
                             shiny::htmlOutput("variablesCovered"),
