@@ -38,7 +38,7 @@ shinyServer(function(input, output, session) {
   
   # The user's data, parsed into a data frame
   observe({
-    rr <- validate::validator(.file = RuleFile()$datapath)
+    rr <- suppressMessages(validate::validator(.file = RuleFile()$datapath))
     if (length(rr) == 0) {
       shinyjs::show("view_err")
       shinyjs::hide("my_rules")
@@ -200,7 +200,9 @@ shinyServer(function(input, output, session) {
 
   ## Variable coverage ----
   output$ruleplot <- renderPlot({
-    plot(RuleSet())
+    if (RulesAvailable() & DataAvailable()) {
+      plot(RuleSet())
+    }
   })
 
   output$variablesCovered <- renderText({
@@ -241,7 +243,6 @@ shinyServer(function(input, output, session) {
         output$cat_bdr <- shiny::renderDataTable(cat_bdr)
         output$num_bdr <- shiny::renderDataTable(num_bdr)
         output$fixed_variables <- shiny::renderDataTable(fixed)
-        
       }
     }
   })

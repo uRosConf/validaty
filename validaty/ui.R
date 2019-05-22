@@ -21,12 +21,12 @@ shinyUI(
         mainPanel(
           tabsetPanel(id = "ts_rules",
             tabPanel("View Rules", value = "tp_view",
-              hidden(
+              shinyjs::hidden(
                 h3(id = "view_err", "Error: Invalid input detected. Please try another file.")
               ),
               shiny::dataTableOutput("rules"),
               # Download Rules Button
-              downloadButton("my_rules", "Download Rules")
+              shinyjs::hidden(downloadButton("my_rules", "Download Rules"))
             ),
             tabPanel("Modify rules",
             h3("Update, Add or Delete rules"),
