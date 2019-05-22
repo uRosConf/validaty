@@ -300,37 +300,36 @@ shinyServer(function(input, output, session) {
       dev.off()
     }
   )
-  # 
-  # 
-  # ## Error localization ----
-  # error_locs <- reactive({
-  #   locate_errors(DataSet(), RuleSet())
-  # })
-  # el_summary <- reactive({
-  #   summary(error_locs())
-  # })
-  # el_rules <- reactive({
-  #   el_summary()[[1]][el_summary()[[1]]$errors > 0, "name"]
-  # })
-  # 
-  # output$el_var  <- renderDataTable(el_summary()[[1]])
-  # output$el_rec  <-
-  #   renderDataTable(as.data.table(el_summary()[[2]]))
-  # 
-  # observe({
-  #   erronous_rules <- el_rules()
-  #   updateSelectInput(session, inputId = "rules", choices = erronous_rules)
-  # })
-  # 
-  # error_ind <- reactive({
-  #   which(values(error_locs()), arr.ind = TRUE)
-  # })
-  # 
-  # val_values <- reactive({
-  #   values(ResultSet())
-  # })
-  # 
-  # output$el_rows <- renderDataTable(subset(as.data.frame(error_locs()), apply(values(error_locs(
-  # )), 1, any)))
+  
+  ## Error localization ----
+  error_locs <- reactive({
+    locate_errors(DataSet(), RuleSet())
+  })
+  el_summary <- reactive({
+    summary(error_locs())
+  })
+  el_rules <- reactive({
+    el_summary()[[1]][el_summary()[[1]]$errors > 0, "name"]
+  })
+
+  output$el_var  <- renderDataTable(el_summary()[[1]])
+  output$el_rec  <- renderDataTable(as.data.table(el_summary()[[2]]))
+
+  observe({
+    erronous_rules <- el_rules()
+    updateSelectInput(session, inputId = "rules", choices = erronous_rules)
+  })
+
+  error_ind <- reactive({
+    which(values(error_locs()), arr.ind = TRUE)
+  })
+
+  val_values <- reactive({
+    values(ResultSet())
+  })
+
+  output$el_rows <- renderDataTable(
+    subset(as.data.frame(error_locs()), apply(values(error_locs(
+  )), 1, any)))
 }) 
   
